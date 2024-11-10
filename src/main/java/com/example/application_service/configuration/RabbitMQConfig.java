@@ -25,7 +25,6 @@ public class RabbitMQConfig {
         objectMapper.registerModule(new JavaTimeModule()); // Register module for Java 8 date/time API
 
         // Configure ObjectMapper to handle specific classes
-        // Example: objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         return new Jackson2JsonMessageConverter(objectMapper);
     }
