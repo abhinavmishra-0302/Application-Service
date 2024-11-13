@@ -1,5 +1,6 @@
 package com.example.application_service.controller;
 
+import com.example.application_service.dto.JobApplicationDto;
 import com.example.application_service.enums.ApplicationStatus;
 import com.example.application_service.models.JobApplication;
 import com.example.application_service.service.JobApplicationService;
@@ -22,14 +23,14 @@ public class JobApplicationController {
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<List<JobApplication>> getApplicationsByUserId(@PathVariable Long userId) {
-        List<JobApplication> applications = jobApplicationService.getApplicationsByUserId(userId);
+    public ResponseEntity<List<JobApplicationDto>> getApplicationsByUserId(@PathVariable Long userId) {
+        List<JobApplicationDto> applications = jobApplicationService.getApplicationsByUserId(userId);
         return ResponseEntity.ok(applications);
     }
 
     @GetMapping("/job/{jobId}")
-    public ResponseEntity<List<JobApplication>> getApplicationsByJobId(@PathVariable Long jobId) {
-        List<JobApplication> applications = jobApplicationService.getApplicationsByJobId(jobId);
+    public ResponseEntity<List<JobApplicationDto>> getApplicationsByJobId(@PathVariable Long jobId) {
+        List<JobApplicationDto> applications = jobApplicationService.getApplicationsByJobId(jobId);
         return ResponseEntity.ok(applications);
     }
 
